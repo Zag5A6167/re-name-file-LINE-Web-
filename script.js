@@ -1,6 +1,6 @@
 const fileName = document.getElementById('fileName')
 const displayName = document.getElementById('displayName')
-const btn = document.getElementById('btn')
+const btnHref = document.getElementById('btnHref')
 const stickerType = document.getElementById('stickerType')
 
 stickerType.addEventListener('change',function(event){
@@ -8,8 +8,9 @@ stickerType.addEventListener('change',function(event){
 })
 fileName.addEventListener('change',function(event){
     const selectedFiles = event.target.files
-    btn.disabled = false
+    
     if(selectedFiles.length > 0){
+        let count = 0
         displayName.textContent = ''
         for(let i = 0;i<selectedFiles.length;i++){
             const selectedFile = selectedFiles[i]
@@ -25,6 +26,3 @@ fileName.addEventListener('change',function(event){
 
 
 
-btn.addEventListener('click',function(){
-    alert("Hew")
-})
